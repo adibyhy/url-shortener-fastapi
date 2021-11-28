@@ -5,6 +5,16 @@
     <title>URL Shortener</title>
 </head>
 <body>
-    <h1>Welcome to URL Shortener!</h1>
+<h1>Welcome to URL Shortener!</h1>
+<form method="post">
+    <label for="url">URL to shorten: </label>
+    <input id="url" name="url" type="text"/>
+    <br>
+    <label for="custom_name">Custom name: </label>
+    <input id="custom_name" name="custom_name" type="text"/>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<p>Shortened URL: <a href="{{ result }}">{{ result }}</a></p>
 </body>
 </html>

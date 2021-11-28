@@ -4,3 +4,5 @@ jinja2
 mongoengine
 pymongo[srv]
 validators
+requests
+python-multipart

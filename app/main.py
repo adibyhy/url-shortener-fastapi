@@ -9,7 +9,7 @@ from app.routers import urls, home
 def create_app():
     instance = FastAPI(title="URL Shortener")
     instance.include_router(home.router)
-    instance.include_router(urls.router)
+    instance.include_router(urls.router, prefix="/api/shorten")
     return instance
 
 
