@@ -9,11 +9,17 @@ from pydantic import BaseModel, validator
 
 
 class Url(BaseModel):
+    """Define the pydantic model of a URL for input."""
     url: str
     custom_name: Optional[str] = None
 
     @validator("url")
-    def url_must_be_correct(cls, v):
+    def url_must_be_correct(cls, v: str):
+        """
+        Validate the URL and try to fix it if it's not valid.
+        :param v: URL
+        :return: URL
+        """
         schemas = ["http://",
                    "https://"]
         if not validators.url(v):

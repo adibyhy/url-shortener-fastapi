@@ -1,5 +1,5 @@
 """
-Define the database structure.
+Contains the database structure.
 """
 
 from datetime import datetime
@@ -9,6 +9,7 @@ from mongoengine import Document, StringField, IntField, DateTimeField
 
 
 class Url(Document):
+    """Define the database structure of a URL."""
     id = ObjectId()
     url = StringField(required=True)
     short_name = StringField(required=True, unique=True)

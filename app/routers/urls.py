@@ -13,6 +13,11 @@ router = APIRouter()
 
 @router.post("/")
 async def shorten_url(url: UrlIn):
+    """
+    Receive a URL and an optional custom_name from request body and return the original URL and a shortened URL.
+    :param url: Request body that consists of a URL and an optional custom name
+    :return: The original URL and a shortened URL
+    """
     if url.custom_name:
         short_name = url.custom_name
     else:
