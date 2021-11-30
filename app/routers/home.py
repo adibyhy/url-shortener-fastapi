@@ -1,3 +1,6 @@
+"""
+Contains the path operations for the home page.
+"""
 from datetime import datetime
 
 import fastapi

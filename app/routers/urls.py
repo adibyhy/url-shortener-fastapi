@@ -1,4 +1,6 @@
-import os
+"""
+Contains the path operations of URL shortener API.
+"""
 import random
 import string
 from urllib.parse import urljoin

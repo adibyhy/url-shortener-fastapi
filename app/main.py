@@ -1,3 +1,6 @@
+"""
+Contains the main application initialization.
+"""
 import os
 
 from fastapi import FastAPI
