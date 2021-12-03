@@ -5,3 +5,5 @@ mongoengine
 pymongo[srv]
 validators
 python-multipart
+requests
+pytest

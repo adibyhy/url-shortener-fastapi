@@ -18,18 +18,24 @@ Developed and tested with:
 1. Create a file named `app.env` and insert the environment variables below:
     ```shell
     BASE_URL=http://127.0.0.1:8000
-    MONGODB_URI=mongodb+srv://user:<password>@cluster0.abc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+    MONGODB_URI=mongodb+srv://user:<password>@cluster0.abc.mongodb.net/url-shortener?retryWrites=true&w=majority
+    MONGODB_URI_TESTS=mongodb+srv://user:<password>@cluster0.abc.mongodb.net/url-shortener-tests?retryWrites=true&w=majority
     RNG_LENGTH=5
     ```
     - `BASE_URL` is the domain name of your server
         - The default is `http://127.0.0.1:8000` if running locally
-    - `MONGODB_URI` is your connection string to MongoDB. Get this from your MongoDB dashboard
+    - `MONGODB_URI` is your connection string to MongoDB for real database. Get this from your MongoDB dashboard
+    - `MONGODB_URI_TESTS` is your connection string to MongoDB for test database. Get this from your MongoDB dashboard
     - `RNG_LENGTH` is the number of characters the short URL has
     - To actually set these variables, make your IDE automatically export them via a `.env` file
       (PyCharm has a plugin for this), _or_ export them manually
 2. Activate virtual environment and execute `uvicorn app.main:app`
     1. Add `--reload` to make the server restart after code changes [**Only use for development**]
 3. Open your `BASE_URL` in a browser to view the home page
+
+## How to Run Tests
+
+1. Execute `pytest` in terminal
 
 ## List of API
 
