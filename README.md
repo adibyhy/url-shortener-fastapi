@@ -84,8 +84,8 @@ Example response:
 ## Future Improvements / Features
 
 1. ~~Check the original URL if it's already in database, and return the existing short URL instead of creating a new one~~
-    1. ~~Will reduce duplicate entries~~
-    2. Added in commit 2c7ff7ce60377247c4ad0ffae4176dedac63131a
+    1. Will reduce duplicate entries
+    2. Added in [commit 2c7ff7c](https://github.com/adibyhy/url-shortener-fastapi/commit/2c7ff7ce60377247c4ad0ffae4176dedac63131a)
 2. Remove unvisited link after a certain length of time has elapsed
     1. Will reduce size of database
     2. Less hoarding of custom names
