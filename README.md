@@ -2,6 +2,8 @@
 
 A simple FastAPI app that shortens a URL and redirects browser to the original URL.
 
+**Demo available at https://ay-us.herokuapp.com/**
+
 ## Requirements
 
 Developed and tested with:
