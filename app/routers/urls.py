@@ -1,6 +1,7 @@
 """
 Contains the path operations of URL shortener API.
 """
+import ast
 import os
 import random
 import string
@@ -34,11 +35,17 @@ async def shorten_url(url: UrlIn):
     if len(name_exist) > 0:
         raise HTTPException(status_code=400, detail=f"Invalid custom name: {short_name} is in use")
 
-    short_url = urljoin(os.environ["BASE_URL"], short_name)
-
-    # Save the url to database
-    good_url = UrlModel(url=url.url, short_name=short_name, short_url=short_url)
-    good_url.save()
+    # Query if url is already in database and get only the first one
+    # But if custom_name is specified, make use of it even when url already exists in database
+    url_exist = UrlModel.objects(url=url.url).only("short_url")[:1]
+    if len(url_exist) > 0 and not url.custom_name:
+        short_url = (url_exist.to_json())
+        short_url = ast.literal_eval(short_url)[0]["short_url"]
+    else:
+        short_url = urljoin(os.environ["BASE_URL"], short_name)
+        # Save the url to database
+        good_url = UrlModel(url=url.url, short_name=short_name, short_url=short_url)
+        good_url.save()
 
     return {"url": url.url,
             "short_url": short_url}

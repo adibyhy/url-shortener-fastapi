@@ -20,10 +20,15 @@ def test_form_submit_url():
     url_04 = {"url": "duckduckgo"}
 
     response = client.post("/", data=url_00)
+    resp_00 = response.text
     assert response.status_code == 200
 
     response = client.post("/", data=url_01)
+    resp_01 = response.text
     assert response.status_code == 200
+
+    # Both responses should be equal because they're pointing to the same url
+    assert resp_00 == resp_01
 
     # This may fail on the first run because database isn't populated yet
     response = client.post("/", data=url_02)
