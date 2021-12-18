@@ -14,6 +14,7 @@ Developed and tested with:
 - Python 3.9
 - Miniconda3
 - Python packages listed in [requirements.txt](requirements.txt)
+- Bootstrap 5.1.3
 
 ## How to Run
 
