@@ -40,9 +40,13 @@ async def form_submit_url(request: Request, url: str = Form(...), custom_name: s
     try:
         data = UrlIn(url=url, custom_name=custom_name)
     except pydantic.error_wrappers.ValidationError:
-        return templates.TemplateResponse("400.html",
+        return templates.TemplateResponse("400.html", status_code=400,
                                           context={'request': request, 'result': f"{url} is not a valid URL"})
-    resp = await shorten_url(data)
+    try:
+        resp = await shorten_url(data)
+    except HTTPException as e:
+        return templates.TemplateResponse("400.html", status_code=400,
+                                          context={'request': request, 'result': e.detail})
     return templates.TemplateResponse("index.html", context={'request': request, 'result': resp['short_url']})
 
 

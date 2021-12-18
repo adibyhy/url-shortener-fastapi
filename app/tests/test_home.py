@@ -33,7 +33,7 @@ def test_form_submit_url():
     # This may fail on the first run because database isn't populated yet
     response = client.post("/", data=url_02)
     assert response.status_code == 400
-    assert response.json() == {"detail": "Invalid custom name: ddg is in use"}
+    assert "Invalid custom name: ddg is in use" in response.text
 
     response = client.post("/", data=url_03)
     assert response.status_code == 200
