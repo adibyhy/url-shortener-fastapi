@@ -95,8 +95,8 @@ Example response:
     1. Easier to deploy
 4. A page to show statistics
     1. Top 10 URLs, etc
-5. Prettier home page
-    1. Mobile version too
+5. ~~Prettier home page with mobile version~~
+   1. Added in [commit 6022791](https://github.com/adibyhy/url-shortener-fastapi/commit/60227910ba74e0ebe753c15ab3dfad308812b706)
 
 ## References & Credits
 
