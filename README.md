@@ -104,3 +104,4 @@ Example response:
    Okunowo
     1. The main inspiration for this project. I reused many of their codes and added my own flavor where I see fit
 2. [FastAPI documentation](https://fastapi.tiangolo.com/)
+3. [Bootstrap documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
